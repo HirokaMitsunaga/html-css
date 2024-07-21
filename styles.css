@@ -1,0 +1,125 @@
+/* 既存のスタイル */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #87ceeb; /* Header color changed to a lighter shade */
+  padding: 10px 20px;
+  color: white;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.main-nav ul li {
+  margin-left: 20px;
+}
+
+.main-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.main-nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #4285f4;
+  color: white;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #357ae8;
+}
+
+/* デフォルトではハンバーガーメニューを非表示にする */
+.hamburger-menu {
+  display: none;
+}
+
+/* メディアクエリ */
+@media screen and (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column; /* 縦に表示されるように設定 */
+    width: 100%; /* 幅を100%に設定 */
+  }
+
+  .main-nav ul {
+    flex-direction: column; /* 縦に表示されるように設定 */
+    width: 100%; /* 幅を100%に設定 */
+  }
+
+  .main-nav ul li {
+    width: 100%; /* 幅を100%に設定 */
+    text-align: left; /* 左揃えに設定 */
+    margin: 10px 0; /* 上下にマージンを追加 */
+  }
+
+  .hamburger-menu {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin: 10px 10px;
+  }
+
+  .hamburger-menu.active + .main-nav {
+    display: flex;
+  }
+
+  .search-bar {
+    display: none;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .hamburger-menu.active + .main-nav + .search-bar {
+    display: flex;
+  }
+}
